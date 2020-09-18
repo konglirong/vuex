@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <!-- <h3>当前最新的count值为：{{$store.state.count}}</h3> -->
-        <h3>{{$store.getters.showNum}}</h3>
+    <h3>{{$store.getters.showNum}}</h3>
     <button @click="clickAdd()">+1</button>
     <p>==================================</p>
     <button @click="clickAsync()">+1 async</button>
@@ -34,7 +34,10 @@ export default {
     }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
-  created() {},
+  created() {
+    let cms = Symbol.for("klr")
+    console.log(cms)
+  },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {},
 };
